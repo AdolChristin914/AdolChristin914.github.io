@@ -326,7 +326,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/26/背景图片自适应/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/09/背景图片自适应/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Adol">
@@ -346,7 +346,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/06/26/背景图片自适应/" class="post-title-link" itemprop="url">背景图片自适应</a>
+                <a href="/2019/07/09/背景图片自适应/" class="post-title-link" itemprop="url">背景图片自适应</a>
               
             
           </h1>
@@ -371,24 +371,12 @@
                 
               
 
-              <time title="创建时间：2019-06-26 11:44:54" itemprop="dateCreated datePublished" datetime="2019-06-26T11:44:54+08:00">2019-06-26</time>
+              <time title="创建时间：2019-07-09 11:44:58 / 修改时间：14:10:34" itemprop="dateCreated datePublished" datetime="2019-07-09T11:44:58+08:00">2019-07-09</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-07-09 14:06:21" itemprop="dateModified" datetime="2019-07-09T14:06:21+08:00">2019-07-09</time>
               
             
           </span>
@@ -455,9 +443,9 @@
 <p> }</p>
 <p>这两种方法都可以使得背景图片自适应，但是他们的原理是不一样的，得到的效果也不相同。</p>
 <p>第一种方法设置width和height的值为百分比的话，<strong>他们的宽度和高度最终计算是取决于父容器</strong>。又因为设置了 background-position: center;得到的效果如下：</p>
-<p><img src="/2019/06/26/背景图片自适应/1.png" alt="和父容器大小有关"></p>
+<p><img src="/2019/07/09/背景图片自适应/1.png" alt="和父容器大小有关"></p>
 <p>第二种方法是取决于图片自身宽度的小大来设置高度  padding-top = (高度/宽度)*100%，我这张图片是宽高1:1的图片，所以设置padding-top:70%图片会被按照高度的70%进行裁剪，由此设置得到的效果:</p>
-<p><img src="/2019/06/26/背景图片自适应/2.png" alt="和图片本身大小有关"></p>
+<p><img src="/2019/07/09/背景图片自适应/2.png" alt="和图片本身大小有关"></p>
 <p><strong>经过测试不同尺寸的大小，发现第二种方法设置背景图片的方法适应的更加好，因为相对于父容器，图片本身的大小更好掌控。</strong>再者第一种方法需要设置background-position: center；不然的话图片是从最左边开始显示，而第二种方法就不需要设置，像是相对于宽度做了整体的缩放。</p>
 
           
