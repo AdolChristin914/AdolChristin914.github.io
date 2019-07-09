@@ -106,7 +106,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/2019/07/09/背景图片自适应/1.png">
 <meta property="og:image" content="http://yoursite.com/2019/07/09/背景图片自适应/2.png">
-<meta property="og:updated_time" content="2019-07-09T06:36:05.350Z">
+<meta property="og:updated_time" content="2019-07-09T06:40:02.989Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="背景图片自适应">
 <meta name="twitter:description" content="设置图片的大小使用百分比可以做到图片宽高自适应，但如果是背景图片的话，有两种方法可以达到自适应。 html代码如下: 1234&amp;lt;div class=&quot;music-view&quot;&amp;gt;    &amp;lt;h1 class=&quot;music-view-title&quot;&amp;gt;&amp;lt;/h1&amp;gt;    &amp;lt;div class=&quot;bg-img&quot;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; 父">
@@ -376,7 +376,7 @@
                 
               
 
-              <time title="创建时间：2019-07-09 11:44:58 / 修改时间：14:36:05" itemprop="dateCreated datePublished" datetime="2019-07-09T11:44:58+08:00">2019-07-09</time>
+              <time title="创建时间：2019-07-09 11:44:58 / 修改时间：14:40:02" itemprop="dateCreated datePublished" datetime="2019-07-09T11:44:58+08:00">2019-07-09</time>
             
 
             
@@ -419,12 +419,6 @@
 <p>html代码如下:</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"music-view"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span> <span class="attr">class</span>=<span class="string">"music-view-title"</span>&gt;</span><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"bg-img"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>父容器css:</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.music-view</span> &#123;</span><br><span class="line">​    position: fixed;</span><br><span class="line">​    <span class="selector-tag">top</span>: 0;</span><br><span class="line">​    <span class="selector-tag">left</span>: 0;</span><br><span class="line">​    <span class="selector-tag">bottom</span>: 0;</span><br><span class="line">​    <span class="selector-tag">right</span>: 0;</span><br><span class="line">​    background-color: $color-background;</span><br><span class="line">​    <span class="selector-tag">z-index</span>: 100;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>这里父容器设置fixed布局是为了将宽高占满，需要同时设置top，left，right，bottom的值，就像锚点一样。</strong></p>
-<p>1.可以设置图片的width和height均为百分比，然后设置background-size和background-position属性。代码如下：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.bg-img</span> &#123;</span><br><span class="line">​    width: 100%;</span><br><span class="line">​    <span class="selector-tag">height</span>: 50%;</span><br><span class="line">​    <span class="selector-tag">background-size</span>: <span class="selector-tag">cover</span>;</span><br><span class="line">​    <span class="selector-tag">background-position</span>: <span class="selector-tag">center</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>2.可以设置图片的padding-top属性为百分比，代码如下:</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.bg-img</span> &#123;</span><br><span class="line">​    width: 100%;</span><br><span class="line">​    <span class="selector-tag">padding-top</span>: 70%;</span><br><span class="line">​    <span class="selector-tag">background-size</span>: <span class="selector-tag">cover</span>;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
 <p>这两种方法都可以使得背景图片自适应，但是他们的原理是不一样的，得到的效果也不相同。</p>
 <p>第一种方法设置width和height的值为百分比的话，<strong>他们的宽度和高度最终计算是取决于父容器</strong>。又因为设置了 background-position: center;得到的效果如下：</p>
 <p><img src="/2019/07/09/背景图片自适应/1.png" alt="和父容器大小有关"></p>
