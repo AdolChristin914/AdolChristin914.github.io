@@ -371,7 +371,7 @@
                 
               
 
-              <time title="创建时间：2019-07-09 11:44:58 / 修改时间：14:35:08" itemprop="dateCreated datePublished" datetime="2019-07-09T11:44:58+08:00">2019-07-09</time>
+              <time title="创建时间：2019-07-09 11:44:58 / 修改时间：14:36:05" itemprop="dateCreated datePublished" datetime="2019-07-09T11:44:58+08:00">2019-07-09</time>
             
 
             
@@ -414,8 +414,7 @@
           
             <p>设置图片的大小使用百分比可以做到图片宽高自适应，但如果是背景图片的话，有两种方法可以达到自适应。</p>
 <p>html代码如下:</p>
-<p>“`html</p>
-<p><div class="music-view"><br>    <h1 class="music-view-title"></h1><br>    <div class="bg-img"></div><br> </div><br>`”</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"music-view"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span> <span class="attr">class</span>=<span class="string">"music-view-title"</span>&gt;</span><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"bg-img"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>父容器css:</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.music-view</span> &#123;</span><br><span class="line">​    position: fixed;</span><br><span class="line">​    <span class="selector-tag">top</span>: 0;</span><br><span class="line">​    <span class="selector-tag">left</span>: 0;</span><br><span class="line">​    <span class="selector-tag">bottom</span>: 0;</span><br><span class="line">​    <span class="selector-tag">right</span>: 0;</span><br><span class="line">​    background-color: $color-background;</span><br><span class="line">​    <span class="selector-tag">z-index</span>: 100;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>这里父容器设置fixed布局是为了将宽高占满，需要同时设置top，left，right，bottom的值，就像锚点一样。</strong></p>
