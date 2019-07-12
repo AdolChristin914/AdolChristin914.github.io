@@ -96,13 +96,18 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Adol&#39;s Note">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="一、说明怎么会想起来讨论下require和import用法的差异，是因为项目中的一个小bug。因为以前写过u3d的项目，里面使用c#语言大量的使用枚举和全局变量使得项目可读性很强，只是维护起来稍微有些繁琐。因为是vue项目，想让js使用全局变量想法也非常简单，一开始是想把全局变量挂在vue实例下，一种是挂在window实例下，还有一种就是哪里用到就import这个全局的js文件，那么就来说说这两种">
+<meta name="keywords" content="js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="require和import的异同">
+<meta property="og:url" content="http://yoursite.com/2019/07/12/require和import的异同/index.html">
 <meta property="og:site_name" content="Adol&#39;s Note">
+<meta property="og:description" content="一、说明怎么会想起来讨论下require和import用法的差异，是因为项目中的一个小bug。因为以前写过u3d的项目，里面使用c#语言大量的使用枚举和全局变量使得项目可读性很强，只是维护起来稍微有些繁琐。因为是vue项目，想让js使用全局变量想法也非常简单，一开始是想把全局变量挂在vue实例下，一种是挂在window实例下，还有一种就是哪里用到就import这个全局的js文件，那么就来说说这两种">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-07-12T08:05:54.489Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Adol&#39;s Note">
+<meta name="twitter:title" content="require和import的异同">
+<meta name="twitter:description" content="一、说明怎么会想起来讨论下require和import用法的差异，是因为项目中的一个小bug。因为以前写过u3d的项目，里面使用c#语言大量的使用枚举和全局变量使得项目可读性很强，只是维护起来稍微有些繁琐。因为是vue项目，想让js使用全局变量想法也非常简单，一开始是想把全局变量挂在vue实例下，一种是挂在window实例下，还有一种就是哪里用到就import这个全局的js文件，那么就来说说这两种">
 
 
 
@@ -112,7 +117,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/">
+  <link rel="canonical" href="http://yoursite.com/2019/07/12/require和import的异同/">
 
 
 
@@ -122,7 +127,7 @@
   };
 </script>
 
-  <title>Adol's Note</title>
+  <title>require和import的异同 | Adol's Note</title>
   
 
 
@@ -170,8 +175,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -213,7 +217,7 @@
         
         
           
-          <li class="menu-item menu-item-home menu-item-active">
+          <li class="menu-item menu-item-home">
 
     
     
@@ -309,9 +313,9 @@
           
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -343,10 +347,8 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/07/12/require和import的异同/" class="post-title-link" itemprop="url">require和import的异同</a>
+          <h1 class="post-title" itemprop="name headline">require和import的异同
+
               
             
           </h1>
@@ -410,9 +412,7 @@
       
 
       
-        
-          
-            <h2 id="一、说明"><a href="#一、说明" class="headerlink" title="一、说明"></a>一、说明</h2><p>怎么会想起来讨论下<span class="label default">require</span>和<span class="label default">import</span>用法的差异，是因为项目中的一个小bug。因为以前写过u3d的项目，里面使用c#语言大量的使用<span class="label default">枚举</span>和<span class="label default">全局变量</span>使得项目可读性很强，只是维护起来稍微有些繁琐。因为是vue项目，想让js使用全局变量想法也非常简单，一开始是想把全局变量挂在vue实例下，一种是挂在window实例下，还有一种就是哪里用到就import这个全局的js文件，那么就来说说这两种方法的异同。</p>
+        <h2 id="一、说明"><a href="#一、说明" class="headerlink" title="一、说明"></a>一、说明</h2><p>怎么会想起来讨论下<span class="label default">require</span>和<span class="label default">import</span>用法的差异，是因为项目中的一个小bug。因为以前写过u3d的项目，里面使用c#语言大量的使用<span class="label default">枚举</span>和<span class="label default">全局变量</span>使得项目可读性很强，只是维护起来稍微有些繁琐。因为是vue项目，想让js使用全局变量想法也非常简单，一开始是想把全局变量挂在vue实例下，一种是挂在window实例下，还有一种就是哪里用到就import这个全局的js文件，那么就来说说这两种方法的异同。</p>
 <h2 id="二、遵循的模块化规范不一样"><a href="#二、遵循的模块化规范不一样" class="headerlink" title="二、遵循的模块化规范不一样"></a>二、遵循的模块化规范不一样</h2><p>import和require的出现都是为了使得js可以支持模块化编程，这样可以是项目目录结构很清晰，也符合编程的单一职责原则。模块化规范有CommonJS、AMD、CMD等等，require值遵循CommonJS的规范，import遵循的是ES6模块化的规范。但是最总import会被babel编译为CommonJS，也就是 <span class="label default">import/export</span> 最终都是编译为 <span class="label default">require/exports</span> 来执行的。</p>
 <h2 id="三、书写形式不一样"><a href="#三、书写形式不一样" class="headerlink" title="三、书写形式不一样"></a>三、书写形式不一样</h2><p><code>require/exports</code> 的用法只有以下三种简单的写法：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>)</span><br><span class="line">exports.fs = fs</span><br><span class="line"><span class="built_in">module</span>.exports = fs</span><br></pre></td></tr></table></figure>
@@ -456,8 +456,6 @@
 <blockquote><p>import的使用方法详情可以参照阮一峰ES6语法</p>
 <footer><strong>阮一峰ES6</strong><cite><a href="http://es6.ruanyifeng.com/#docs/module" target="_blank" rel="noopener">es6.ruanyifeng.com/#docs/module</a></cite></footer></blockquote>
 
-          
-        
       
     </div>
 
@@ -478,190 +476,36 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/09/背景图片自适应/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Adol">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar1.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Adol's Note">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/07/09/背景图片自适应/" class="post-title-link" itemprop="url">背景图片自适应</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-07-09 11:44:58 / 修改时间：14:57:47" itemprop="dateCreated datePublished" datetime="2019-07-09T11:44:58+08:00">2019-07-09</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/web前端/" itemprop="url" rel="index"><span itemprop="name">web前端</span></a></span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/js/" rel="tag"># js</a>
           
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>设置图片的大小使用百分比可以做到图片宽高自适应，但如果是背景图片的话，有两种方法可以达到自适应。</p>
-<p>html代码如下:</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"music-view"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span> <span class="attr">class</span>=<span class="string">"music-view-title"</span>&gt;</span><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"bg-img"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>父容器css:</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.music-view</span> &#123;</span><br><span class="line">​    position: fixed;</span><br><span class="line">​    <span class="selector-tag">top</span>: 0;</span><br><span class="line">​    <span class="selector-tag">left</span>: 0;</span><br><span class="line">​    <span class="selector-tag">bottom</span>: 0;</span><br><span class="line">​    <span class="selector-tag">right</span>: 0;</span><br><span class="line">​    background-color: $color-background;</span><br><span class="line">​    <span class="selector-tag">z-index</span>: 100;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>这里父容器设置fixed布局是为了将宽高占满，需要同时设置top，left，right，bottom的值，就像锚点一样。</strong></p>
-<p>1.可以设置图片的width和height均为百分比，然后设置background-size和background-position属性。代码如下：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.bg-img</span> &#123;</span><br><span class="line">​    width: 100%;</span><br><span class="line">​    <span class="selector-tag">height</span>: 50%;</span><br><span class="line">​    <span class="selector-tag">background-size</span>: <span class="selector-tag">cover</span>;</span><br><span class="line">​    <span class="selector-tag">background-position</span>: <span class="selector-tag">center</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>2.可以设置图片的padding-top属性为百分比，代码如下:</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.bg-img</span> &#123;</span><br><span class="line">​    width: 100%;</span><br><span class="line">​    <span class="selector-tag">padding-top</span>: 70%;</span><br><span class="line">​    <span class="selector-tag">background-size</span>: <span class="selector-tag">cover</span>;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-<p>这两种方法都可以使得背景图片自适应，但是他们的原理是不一样的，得到的效果也不相同。</p>
-<p>第一种方法设置width和height的值为百分比的话，<strong>他们的宽度和高度最终计算是取决于父容器</strong>。又因为设置了 background-position: center;得到的效果如下：</p>
-<p><img src="/2019/07/09/背景图片自适应/1.png" alt="和父容器大小有关"></p>
-<p>第二种方法是取决于图片自身宽度的小大来设置高度  padding-top = (高度/宽度)*100%，我这张图片是宽高1:1的图片，所以设置padding-top:70%图片会被按照高度的70%进行裁剪，由此设置得到的效果:</p>
-<p><img src="/2019/07/09/背景图片自适应/2.png" alt="和图片本身大小有关"></p>
-<p><strong>经过测试不同尺寸的大小，发现第二种方法设置背景图片的方法适应的更加好，因为相对于父容器，图片本身的大小更好掌控。</strong>再者第一种方法需要设置background-position: center；不然的话图片是从最左边开始显示，而第二种方法就不需要设置，像是相对于宽度做了整体的缩放。</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
       
 
       
       
-        <div class="post-eof"></div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/09/背景图片自适应/" rel="next" title="背景图片自适应">
+                <i class="fa fa-chevron-left"></i> 背景图片自适应
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
       
     </footer>
   </div>
@@ -671,14 +515,15 @@
   </article>
 
 
-    
-  </section>
-
-  
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -698,8 +543,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -790,6 +644,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、说明"><span class="nav-number">1.</span> <span class="nav-text">一、说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、遵循的模块化规范不一样"><span class="nav-number">2.</span> <span class="nav-text">二、遵循的模块化规范不一样</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、书写形式不一样"><span class="nav-number">3.</span> <span class="nav-text">三、书写形式不一样</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、加载方式"><span class="nav-number">4.</span> <span class="nav-text">四、加载方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五、具体差异"><span class="nav-number">5.</span> <span class="nav-text">五、具体差异</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-require"><span class="nav-number">5.1.</span> <span class="nav-text">1.require</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-import"><span class="nav-number">5.2.</span> <span class="nav-text">2.import</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#六、Bug容易出现的地方"><span class="nav-number">6.</span> <span class="nav-text">六、Bug容易出现的地方</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#七、综上"><span class="nav-number">7.</span> <span class="nav-text">七、综上</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
@@ -923,6 +794,10 @@
 
 
   
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
 
   
 
@@ -938,6 +813,8 @@
 
   
 
+
+  
 
 
   
