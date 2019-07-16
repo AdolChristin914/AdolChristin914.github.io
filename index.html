@@ -326,6 +326,177 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/16/js动态创建css3的animation动画/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Adol">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Adol's Note">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/07/16/js动态创建css3的animation动画/" class="post-title-link" itemprop="url">js动态创建css3的animation动画</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-16 11:28:48 / 修改时间：15:06:35" itemprop="dateCreated datePublished" datetime="2019-07-16T11:28:48+08:00">2019-07-16</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/web前端/" itemprop="url" rel="index"><span itemprop="name">web前端</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="css3中animation和transition"><a href="#css3中animation和transition" class="headerlink" title="css3中animation和transition"></a>css3中animation和transition</h2><p>由于工作中遇到了需要用js来动态创建<code>animation</code>，于是乎就想到另一个能实现css3动画的属性<code>transition</code>。由于本人喜欢<code>折腾</code>，通过搜索来的资料，就来探究下这两个玩意是怎么<code>玩</code>的。<strong>PS:这里主要讨论的是js动态创建animation过程，具体属性介绍请自行百度或者查看链接</strong></p>
+<h2 id="1、transition"><a href="#1、transition" class="headerlink" title="1、transition"></a>1、transition</h2><p><code>transition</code>一共有四个属性<code>transition-property</code>、<code>transition-duration</code>、<code>transition-timing-function</code>、<code>transition-delay</code>，具体用法链接<a href="http://www.w3school.com.cn/cssref/pr_transition.asp" target="_blank" rel="noopener">w3school transition</a>。<br>需要<code>注意</code>的是，不是所有的css属性都可以适用transition-property，具体的列表可以参照<a href="http://oli.jp/2010/css-animatable-properties/" target="_blank" rel="noopener">transition-property适用的属性</a>，效果可以参照<a href="http://leaverou.github.io/animatable/" target="_blank" rel="noopener">transition过渡效果</a>。<br>一般来说我们只要记住他的缩写形式：transiton: 过渡属性 过渡所需要时间 过渡动画函数 过渡延迟时间<br>过渡函数有以下几种：<br>liner ：匀速<br>ease-in：减速<br>ease-out：加速<br>ease-in-out：先加速再减速<br>cubic-bezier：三次贝塞尔曲线，可以定制 <a href="https://cubic-bezier.com/#.06,.88,.84,.24" target="_blank" rel="noopener">cubic-bezier定制</a><br><strong>单纯的代码不会触发任何过渡操作，需要通过用户的行为（如点击，悬浮等）触发，可触发的方式有：</strong><br><strong>:hover :focus :checked 媒体查询触发 JavaScript触发</strong></p>
+<h2 id="2、animation"><a href="#2、animation" class="headerlink" title="2、animation"></a>2、animation</h2><p><code>animation</code>相对与<code>transition</code>可定制化程度要高很多(很高的可玩性)，<code>animation</code>可以通过控制关键帧一样控制动画的过程，可以实现更为复杂的的动画。具体属性如下链接<a href="http://www.w3school.com.cn/cssref/pr_animation.asp" target="_blank" rel="noopener">w3school animation</a>。<br><code>animation</code>可以通过创建关键帧来创建动画，虽然目前浏览器都已经支持，但是为了兼容老版本浏览器，<strong>加上前缀</strong>(如果使用<code>autoprefixer</code>那就实在太棒了)；举例代码:<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.div1</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>:<span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">height</span>:<span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>:red;</span><br><span class="line">    <span class="attribute">animation</span>:leaveToPos .<span class="number">5s</span> linear</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@<span class="keyword">keyframes</span> leaveToPos&#123;</span><br><span class="line">    0% &#123;</span><br><span class="line">        <span class="attribute">transform</span>: <span class="built_in">translate3d</span>(-50px, -50px, 0) <span class="built_in">scale</span>(1.1)</span><br><span class="line">    &#125;</span><br><span class="line">    20% &#123;</span><br><span class="line">        <span class="attribute">transform</span>: <span class="built_in">translate3d</span>(0, 0, 0) <span class="built_in">scale</span>(1)</span><br><span class="line">    &#125;</span><br><span class="line">    100% &#123;</span><br><span class="line">        <span class="attribute">transform</span>: <span class="built_in">translate3d</span>(50px, 50px, 0) <span class="built_in">scale</span>(2)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>上面代码中的0% 100%的百分号都不能省略，0%可以由from代替，100%可以由to代替。要让leaveToPos动画有效果，就必须要通过CSS3animation属性来调用它。</strong></p>
+<h2 id="3、transition和animation的使用场景"><a href="#3、transition和animation的使用场景" class="headerlink" title="3、transition和animation的使用场景"></a>3、transition和animation的使用场景</h2><p><code>transition</code>的优点在于简单易用，相比<code>animation</code>代码量少很多，但是他的局限性也很大：<br>（1）transition需要事件触发，所以没法在<strong>网页加载时</strong>自动发生。<br>（2）transition是<strong>一次性</strong>的，不能重复发生，除非一再触发。<br>（3）transition只能定义开始状态和结束状态，不能定义中间状态，也就是说只有两个状态。<br>（4）一条transition规则，只能定义一个属性的变化，不能涉及多个属性。<br><code>animation</code>就是为了解决这些问题而提出的。<br><code>animation</code>不需要触发，直接可以使用，但是运行效率要比<code>transition</code>低一点。</p>
+<p><code>transition</code>经常用在一些比较<strong>简单的过渡动画效果(较为线性的转换效果)，通过css伪类、js、@media触发。</strong><br><code>animation</code>用在<strong>复杂的动画效果，动画循环，开场动画、非线性的效果。</strong></p>
+<h2 id="4、js动态创建animation"><a href="#4、js动态创建animation" class="headerlink" title="4、js动态创建animation"></a>4、js动态创建animation</h2><p>工作的时候发现有的时候需要动态的创建动画，比如动画中需要一些参数是根据浏览器大小或位置原点计算出来再执行动画，那就要使用<code>js</code>动态创建<code>animation</code>了。<br>使用<code>document.styleSheets</code>进行动态添加css样式，代码如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">const</span> &#123; trans_x, trans_y, scale &#125; = <span class="keyword">this</span>.getTransOffset();</span><br><span class="line"> <span class="built_in">document</span>.styleSheets[<span class="number">0</span>].insertRule(<span class="string">`@keyframes moveToPos&#123;</span></span><br><span class="line"><span class="string">     0% &#123;</span></span><br><span class="line"><span class="string">         transform: translate3d(<span class="subst">$&#123;trans_x&#125;</span>px, <span class="subst">$&#123;trans_y&#125;</span>px, 0) scale(<span class="subst">$&#123;scale&#125;</span>)</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">    60% &#123;</span></span><br><span class="line"><span class="string">        transform: translate3d(0, 0, 0) scale(1.1)</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">    100% &#123;</span></span><br><span class="line"><span class="string">    transform: translate3d(0, 0, 0) scale(1)</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">`</span>);</span><br><span class="line">dom.style.animation = <span class="string">'moveToPos 0.4s'</span></span><br></pre></td></tr></table></figure></p>
+<p>为了避免重复添加，最好在初始化的时候就添加好。</p>
+<h2 id="5、总结"><a href="#5、总结" class="headerlink" title="5、总结"></a>5、总结</h2><p>虽然js很重要，但是css同样重要，不要用了现成的ui框架把css都给遗忘了。</p>
+<blockquote><p>此文参考阮一峰博客 </p>
+<footer><strong>阮一峰</strong><cite><a href="http://www.ruanyifeng.com/blog/2014/02/css_transition_and_animation.html" target="_blank" rel="noopener">www.ruanyifeng.com/blog/2014/02/css_transition_and_animation.html</a></cite></footer></blockquote>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/12/require和import的异同/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -371,7 +542,7 @@
                 
               
 
-              <time title="创建时间：2019-07-12 11:17:12 / 修改时间：16:05:54" itemprop="dateCreated datePublished" datetime="2019-07-12T11:17:12+08:00">2019-07-12</time>
+              <time title="创建时间：2019-07-12 11:17:12 / 修改时间：18:12:21" itemprop="dateCreated datePublished" datetime="2019-07-12T11:17:12+08:00">2019-07-12</time>
             
 
             
@@ -381,6 +552,24 @@
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/web前端/" itemprop="url" rel="index"><span itemprop="name">web前端</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -716,7 +905,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -756,7 +945,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">2</span>
+                      
+                    
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
